@@ -12,8 +12,8 @@
     session_start();    //start the session
 
     $pass=$uname="";
+    $status=true;
     if (!empty($_POST)) {
-        $status= true;
         if (empty($_POST['uname'])) {
             $status=false;
         }
@@ -42,14 +42,15 @@
         else{
 
         if ($status) {
-            $sql="SELECT username, password
+            $sql="SELECT name, username, password
                 FROM login WHERE username='$uname' AND password='$pass'";
             $result=$com->query($sql);//finding out how many rows are being returned
             if ($result->num_rows > 0) {
                 $record= $result->fetch_assoc();//converting result to associative array
                 $_SESSION['loggedin']=true; //loggedin can be anything
             // $_SESSION['']=$record
-                header ("Location: hello.php");
+                $_SESSION['userDetails']=$record;
+                header ("Location: input.php");
             }
             else{
                 echo "Invalid credentials. <br>";
