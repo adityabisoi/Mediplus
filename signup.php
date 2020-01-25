@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/styles1.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop()) {
+          $('nav').addClass('black');
+  
+        } else {
+          $('nav').removeClass('black');
+        }
+      })
+    </script>
 </head>
-<body>
+<body class="body1">
     <?php
 
     $un=$ps=$na=$ph=$em=$ad=$ct=$ds=$st="";
@@ -92,6 +105,13 @@
     }}
     }
     ?>
+    <nav>
+                  <img class="logo" src="logo.png">
+                  <ul>
+                    <li><a class="active" href="login.php">Login</a></li>
+                  </ul>
+                </nav>
+    <div class="wrap">
     <h2>Sign Up here</h2>
     <form method="post">
             <input type="text" name="uname" placeholder="Username" required autofocus >
@@ -105,5 +125,6 @@
             <input type="text" name="state" placeholder="State" required >
             <input type="submit" name="submit" value="Submit" >
     </form>
+    </div>
 </body>
 </html>
