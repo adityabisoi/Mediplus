@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +10,17 @@
     <link rel="stylesheet" href="src/styles1.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript">
-      $(window).on('scroll', function() {
-        if ($(window).scrollTop()) {
-          $('nav').addClass('black');
-  
-        } else {
-          $('nav').removeClass('black');
-        }
-      })
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+
+            } else {
+                $('nav').removeClass('black');
+            }
+        })
     </script>
 </head>
+
 <body class="body1">
     <?php
 
@@ -106,25 +108,26 @@
     }
     ?>
     <nav>
-                  <img class="logo" src="logo.png">
-                  <ul>
-                    <li><a class="active" href="login.php">Login</a></li>
-                  </ul>
-                </nav>
+        <img class="logo" src="logo.png">
+        <ul>
+            <li><a class="active" href="login.php">Login</a></li>
+        </ul>
+    </nav>
     <div class="wrap">
-    <h2>Sign Up here</h2>
-    <form method="post">
-            <input type="text" name="uname" placeholder="Username" required autofocus >
-            <input type="text" name="name" placeholder="Hospital name" required >
-            <input type="email" name="email"  placeholder="abc@xyz.com" required  >
-            <input type="number" name="phone" placeholder="Number" required >
-            <input type="password" name="pass"  placeholder="password" required >
-            <input type="text" name="addr" placeholder="Address" required >
-            <input type="text" name="city" placeholder="City" required >
-            <input type="text" name="dist" placeholder="District" required >
-            <input type="text" name="state" placeholder="State" required >
-            <input type="submit" name="submit" value="Submit" >
-    </form>
+        <h2>Sign Up here</h2>
+        <form method="post">
+            <input type="text" name="uname" placeholder="Username" required autofocus>
+            <input type="text" name="name" placeholder="Hospital name" required>
+            <input type="email" name="email" placeholder="abc@xyz.com" required>
+            <input type="number" name="phone" placeholder="Number" required>
+            <input type="password" name="pass" placeholder="password" required>
+            <input type="text" name="addr" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="dist" placeholder="District" required>
+            <input type="text" name="state" placeholder="State" required>
+            <input type="submit" name="submit" value="Submit">
+        </form>
     </div>
 </body>
+
 </html>
