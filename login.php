@@ -68,7 +68,7 @@
                 $_SESSION['loggedin']=true; //loggedin can be anything
             // $_SESSION['']=$record
                 $_SESSION['userDetails']=$record;
-                header ("Location: input.php");
+                header ("Location: index.php");
             }
             else{
                 echo "Invalid credentials. <br>";
