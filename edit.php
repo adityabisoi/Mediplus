@@ -5,13 +5,13 @@ include('config.php');
 if (isset($_POST['submit']))
 {
 $id=$_POST['id'];
-$name=mysqli_real_escape_string($db, $_POST['product_name']);
+$name=mysqli_real_escape_string($db, $_POST['rname']);
 $price=mysqli_real_escape_string($db, $_POST['price']);
 $quant=mysqli_real_escape_string($db, $_POST['quantity']);
 
-mysqli_query($db,"UPDATE product SET product_name='$name', price='$price' ,quantity='$quant' WHERE product_id='$id'");
+mysqli_query($db,"UPDATE resources SET rname='$name', price='$price' ,quantity='$quant' WHERE product_id='$id'");
 
-header("Location:input.php");
+header("Location:pharma.php");
 }
 
 
@@ -19,7 +19,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0)
 {
 
 $id = $_GET['id'];
-$result = mysqli_query($db,"SELECT * FROM product WHERE product_id=".$_GET['id']);
+$result = mysqli_query($db,"SELECT * FROM resources WHERE product_id=".$_GET['id']);
 
 $row = mysqli_fetch_array($result);
 
@@ -27,7 +27,7 @@ if($row)
 {
 
 $id = $row['product_id'];
-$name = $row['product_name'];
+$name = $row['rname'];
 $price = $row['price'];
 $quant=$row['quantity'];
 }
@@ -58,7 +58,7 @@ echo "No results!";
 <tr>
 <td width="179"><b><font >Item Name<em>*</em></font></b></td>
 <td><label>
-<input type="text" name="product_name" value="<?php echo $name; ?>" />
+<input type="text" name="rname" value="<?php echo $name; ?>" />
 </label></td>
 </tr>
 

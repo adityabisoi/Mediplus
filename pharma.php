@@ -14,7 +14,7 @@ if(isset($_SESSION['loggedin'])==true)
 
 <body>
     <?php 
-        $name=$type=$rname=$quan="";
+        $name=$type=$rname=$quan=$price="";
         $name= $_SESSION['userDetails']['name'];
         $status=true;
         if (!empty($_POST)) {
@@ -29,6 +29,12 @@ if(isset($_SESSION['loggedin'])==true)
             }
             else {
                 $rname=$_POST['rname'];
+            }
+            if (empty($_POST['price'])) {
+                $status=false;
+            }
+            else {
+                $price=$_POST['price'];
             }
             if (empty($_POST['quan'])) {
                 $status=false;
@@ -52,9 +58,9 @@ if(isset($_SESSION['loggedin'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO resources (name, type, rname, quantity) values ('$name','$type','$rname','$quan')";
+                $sql="INSERT INTO resources (name, type, rname, quantity, price) values ('$name','$type','$rname','$quan','$price')";
                 if ($com->query($sql)) {
-                    header ("Location: test.php");
+                    header ("Location: pharma.php");
                 }
                 else{
                     echo "Invalid credentials. <br>";
@@ -65,34 +71,30 @@ if(isset($_SESSION['loggedin'])==true)
     
         }
     ?>
-    <form method="post">
-        <select name="type">
-            <option value="blood">Blood</option>
-            <option value="medicine">Medicine</option>
-            <option value="vaccine">Vaccine</option>
-        </select>
-        <input type="text" name="rname">
-        <input type="number" name="quan">
-        <input type="submit" value="Submit">
-    </form>
     <div>
 
-        <h1 style="text-align:center">Add Item Here</h1>
+        <h1 style="text-align:center">Add Item Here</h1><br>
 
         <body>
-            <form method="POST" class="form-inline" action="additem.php">
+            <form method="POST" class="form-inline">
+                <div class="form-group">
+                    <select name="type">
+                        <option value="medicine">Medicine</option>
+                        <option value="vaccine">Vaccine</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="name">Product Name</label>
-                    <input type="text" class="form-control" name="product_name">
+                    <input type="text" class="form-control" name="rname">
 
                 </div>
                 <div class="form-group">
                     <label for="name">Price</label>
-                    <input type="text" class="form-control" name="price">
+                    <input type="number" class="form-control" name="price">
                 </div>
                 <div class="form-group">
                     <label for="name">Quantity</label>
-                    <input type="number" name="quant" id="quant" min="1" max="">
+                    <input type="number" name="quan" id="quant" min="1" max="">
                 </div>
                 <button type="submit" class="btn btn-default" name="add">Add item</button>
 
@@ -105,7 +107,7 @@ if(isset($_SESSION['loggedin'])==true)
                 <div class="col-lg-6 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">Products</h4>
+                            <h4 class="header-title">Medicines</h4>
                             <div class="single-table">
                                 <div class="table-responsive">
                                     <table class="table text-dark text-center">
@@ -123,8 +125,8 @@ if(isset($_SESSION['loggedin'])==true)
                                         </thead>
                                         <tbody>
                                             <?php 
-               $conn = new mysqli("localhost","root","","inventorymanagement");
-               $sql = "SELECT * FROM product";
+               $conn = new mysqli("localhost","root","","electrothon");
+               $sql = "SELECT * FROM resources WHERE name= '$name' && type='medicine'";
                $result = $conn->query($sql);
 					$count=0;
                if ($result -> num_rows >  0) {
@@ -137,7 +139,65 @@ if(isset($_SESSION['loggedin'])==true)
 
                                             <tr>
                                                 <th><?php echo $count ?></th>
-                                                <th><?php echo $row["product_name"] ?></th>
+                                                <th><?php echo $row["rname"] ?></th>
+                                                <th><?php echo $row["price"]  ?></th>
+                                                <th><?php echo $row["quantity"]  ?></th>
+
+                                                <th> <a href="up" Edit</a> <a
+                                                        href="edit.php?id=<?php echo $row["product_id"] ?>">Edit</a>
+                                                    <a href="up" Edit</a> <a
+                                                        href="delete.php?id=<?php echo $row["product_id"] ?>">Delete</a>
+                                                </th>
+
+
+                                            </tr>
+                                            <?php
+                 
+                 }
+               }
+
+            ?>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="header-title">Vaccines</h4>
+                            <div class="single-table">
+                                <div class="table-responsive">
+                                    <table class="table text-dark text-center">
+                                        <thead class="text-uppercase">
+                                            <tr class="table-active">
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Action</th>
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+               $conn = new mysqli("localhost","root","","electrothon");
+               $sql1 = "SELECT * FROM resources WHERE name= '$name' && type='vaccine'";
+               $result1 = $conn->query($sql1);
+					$count=0;
+               if ($result1 -> num_rows >  0) {
+				  
+                 while ($row = $result1->fetch_assoc()) 
+				 {
+					  $count=$count+1;
+                   ?>
+
+
+                                            <tr>
+                                                <th><?php echo $count ?></th>
+                                                <th><?php echo $row["rname"] ?></th>
                                                 <th><?php echo $row["price"]  ?></th>
                                                 <th><?php echo $row["quantity"]  ?></th>
 
