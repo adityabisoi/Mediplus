@@ -120,9 +120,9 @@
         <h1>Login</h1>
         <form method="POST">
             <p>Username:</p>
-            <input type="text" name="uname" placeholder="abc@xyz.com"><br>
+            <input type="text" name="uname" placeholder="Username"><br>
             <p>Password:</p>
-            <input type="password" name="password" placeholder="password"><br>
+            <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" name="submit" value="Submit">
         </form>
     </div>
