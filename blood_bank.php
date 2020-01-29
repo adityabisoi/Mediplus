@@ -18,7 +18,7 @@ if(isset($_SESSION['loggedin'])==true)
     
 <?php 
         $type=$quantity="";
-        // $name= $_SESSION['userDetails']['name'];
+        $name= $_SESSION['userDetails']['name'];
         $status=true;
         if (!empty($_POST)) {
             if (empty($_POST['type'])) {
@@ -49,7 +49,7 @@ if(isset($_SESSION['loggedin'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO bloodbank (type, quantity) values ('$type','$quantity')";
+                $sql="INSERT INTO bloodbank (name, type, quantity) values ('$name','$type','$quantity')";
                 if ($com->query($sql)) {
                     header ("Location: blood_bank.php");
                 }
