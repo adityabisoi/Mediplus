@@ -11,12 +11,12 @@ if(isset($_SESSION['loggedin'])==true)
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Inventory Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 </head>
 
 <body>
-    
-<?php 
+
+    <?php 
         $rname=$quantity="";
         $type='blood';
         $name= $_SESSION['userDetails']['name'];
@@ -70,15 +70,15 @@ if(isset($_SESSION['loggedin'])==true)
         <body>
             <form method="POST" class="form-inline">
                 <div class="form-group">
-                <select name="rname">
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
+                    <select name="rname">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -153,43 +153,43 @@ if(isset($_SESSION['loggedin'])==true)
                         </div>
                         <!-- main content area end -->
 
-                <html>
+                        <html>
 
-<head>
-    <title>Add Item</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
-</head>
+                        <head>
+                            <title>Add Item</title>
+                            <link rel="stylesheet" type="text/css" href="style.css">
+                            <link rel="stylesheet"
+                                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+                                integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+                                crossorigin="anonymous">
+                        </head>
 
-</html>
-
-
+                        </html>
 
 
 
 
 
-</div>
-<!-- page container area end -->
-<!-- offset area start -->
 
-<!-- offset area end -->
-<!-- jquery latest version -->
-<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
-<!-- bootstrap 4 js -->
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/jquery.slimscroll.min.js"></script>
-<script src="assets/js/jquery.slicknav.min.js"></script>
 
-<!-- others plugins -->
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/scripts.js"></script>
+                    </div>
+                    <!-- page container area end -->
+                    <!-- offset area start -->
+
+                    <!-- offset area end -->
+                    <!-- jquery latest version -->
+                    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+                    <!-- bootstrap 4 js -->
+                    <script src="assets/js/popper.min.js"></script>
+                    <script src="assets/js/bootstrap.min.js"></script>
+                    <script src="assets/js/owl.carousel.min.js"></script>
+                    <script src="assets/js/metisMenu.min.js"></script>
+                    <script src="assets/js/jquery.slimscroll.min.js"></script>
+                    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+                    <!-- others plugins -->
+                    <script src="assets/js/plugins.js"></script>
+                    <script src="assets/js/scripts.js"></script>
 </body>
 <?php }else{ header ("Location: closed.php"); } ?>
 </body>

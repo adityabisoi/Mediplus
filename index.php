@@ -85,7 +85,7 @@ if(isset($_SESSION['loggedin'])==true)
                                         <tbody>
                                             <?php 
 $conn = new mysqli("localhost","root","","electrothon");
-$sql = "SELECT * FROM resources";
+$sql = "SELECT * FROM resources WHERE type='medicine' || type='vaccine'";
 $result = $conn->query($sql);
     $count=0;
 if ($result -> num_rows >  0) {

@@ -41,47 +41,58 @@ echo "No results!";
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+
 <head>
-<title>Edit Item</title>
+    <title>Edit Item</title>
 </head>
+
 <body>
 
 
 
-<form action="" method="post" action="edit.php">
-<input type="hidden" name="id" value="<?php echo $id; ?>"/>
+    <form action="" method="post" action="edit.php">
+        <input type="hidden" name="id" value="<?php echo $id; ?>" />
 
-<table border="1">
-<tr>
-<td colspan="2"><b><font color='Red'>Edit Records </font></b></td>
-</tr>
-<tr>
-<td width="179"><b><font >Item Name<em>*</em></font></b></td>
-<td><label>
-<input type="text" name="rname" value="<?php echo $name; ?>" />
-</label></td>
-</tr>
+        <table border="1">
+            <tr>
+                <td colspan="2"><b>
+                        <font color='Red'>Edit Records </font>
+                    </b></td>
+            </tr>
+            <tr>
+                <td width="179"><b>
+                        <font>Item Name<em>*</em></font>
+                    </b></td>
+                <td><label>
+                        <input type="text" name="rname" value="<?php echo $name; ?>" />
+                    </label></td>
+            </tr>
 
-<tr>
-<td width="179"><b><font color='#663300'>Price<em>*</em></font></b></td>
-<td><label>
-<input type="text" name="price" value="<?php echo $price ?>" />
-</label></td>
-</tr>
+            <tr>
+                <td width="179"><b>
+                        <font color='#663300'>Price<em>*</em></font>
+                    </b></td>
+                <td><label>
+                        <input type="text" name="price" value="<?php echo $price ?>" />
+                    </label></td>
+            </tr>
 
-<tr>
-<td width="179"><b><font color='#663300'>Quantity<em>*</em></font></b></td>
-<td><label>
-<input type="text" name="quantity" value="<?php echo $quant;?>" />
-</label></td>
-</tr>
+            <tr>
+                <td width="179"><b>
+                        <font color='#663300'>Quantity<em>*</em></font>
+                    </b></td>
+                <td><label>
+                        <input type="text" name="quantity" value="<?php echo $quant;?>" />
+                    </label></td>
+            </tr>
 
-<tr align="Right">
-<td colspan="2"><label>
-<input type="submit" name="submit" value="Edit Records">
-</label></td>
-</tr>
-</table>
-</form>
+            <tr align="Right">
+                <td colspan="2"><label>
+                        <input type="submit" name="submit" value="Edit Records">
+                    </label></td>
+            </tr>
+        </table>
+    </form>
 </body>
+
 </html>

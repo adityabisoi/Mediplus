@@ -1,4 +1,3 @@
-
 <?php
 $db = mysqli_connect('localhost', 'root', '', 'electrothon');
 if (mysqli_connect_errno())
