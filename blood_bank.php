@@ -17,15 +17,16 @@ if(isset($_SESSION['loggedin'])==true)
 <body>
     
 <?php 
-        $type=$quantity="";
+        $rname=$quantity="";
+        $type='blood';
         $name= $_SESSION['userDetails']['name'];
         $status=true;
         if (!empty($_POST)) {
-            if (empty($_POST['type'])) {
+            if (empty($_POST['rname'])) {
                 $status=false;
             }
             else {
-                $type=$_POST['type'];
+                $rname=$_POST['rname'];
             }
             if (empty($_POST['quantity'])) {
                 $status=false;
@@ -49,7 +50,7 @@ if(isset($_SESSION['loggedin'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO bloodbank (name, type, quantity) values ('$name','$type','$quantity')";
+                $sql="INSERT INTO resources (name, type,rname, quantity) values ('$name','$type','$rname', '$quantity')";
                 if ($com->query($sql)) {
                     header ("Location: blood_bank.php");
                 }
@@ -69,7 +70,7 @@ if(isset($_SESSION['loggedin'])==true)
         <body>
             <form method="POST" class="form-inline">
                 <div class="form-group">
-                <select name="type">
+                <select name="rname">
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -102,7 +103,7 @@ if(isset($_SESSION['loggedin'])==true)
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Type</th>
+                                                <th scope="col">Group</th>
                                                 <th scope="col">Quantity</th>
                                                 <th scope="col">Action</th>
 
@@ -113,7 +114,7 @@ if(isset($_SESSION['loggedin'])==true)
                                         <tbody>
                                             <?php 
                $conn = new mysqli("localhost","root","","electrothon");
-               $sql = "SELECT * FROM bloodbank ";
+               $sql = "SELECT * FROM resources WHERE type='blood'";
                $result = $conn->query($sql);
 					$count=0;
                if ($result -> num_rows >  0) {
@@ -126,7 +127,7 @@ if(isset($_SESSION['loggedin'])==true)
 
                                             <tr>
                                                 <th><?php echo $count ?></th>
-                                                <th><?php echo $row["type"]  ?></th>
+                                                <th><?php echo $row["rname"]  ?></th>
                                                 <th><?php echo $row["quantity"]  ?></th>
 
                                                 <th> <a href="up" Edit</a> <a

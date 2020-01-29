@@ -13,51 +13,8 @@ if(isset($_SESSION['loggedin'])==true)
 </head>
 
 <body>
-    <?php 
-        $name=$type="";
-        $status=true;
-        if (!empty($_POST)) {
-            if (empty($_POST['type'])) {
-                $status=false;
-            }
-            else {
-                $type=$_POST['type'];
-            }
-            if (empty($_POST['name'])) {
-                $status=false;
-            }
-            else {
-                $name=$_POST['name'];
-            }
-            
-            $servername= "localhost";
-            $username= "root";
-            $password= "";
-            $dbname="electrothon";
-    
-            //create connection
-            $com= new mysqli($servername, $username, $password,$dbname);
-    
-            //check connection
-            if ($com->connect_error ) {
-                die("Connection failed ".$com->connect_error);
-            }
-            else{
-    
-            if ($status) {
-                $sql="INSERT INTO resources (name, type, rname, quantity, price) values ('$name','$type','$rname','$quan','$price')";
-                if ($com->query($sql)) {
-                    header ("Location: pharma.php");
-                }
-                else{
-                    echo "Invalid credentials. <br>";
-                }
-            $com->close();
-            }
-        }
-    
-        }
-    ?>
+
+
     <div>
 
         <h1 style="text-align:center">Search</h1><br>
