@@ -54,6 +54,6 @@ if(isset($_SESSION['loggedin'])==true)
 	</div>
 	<!-- //main -->
 </body>
-<?php }else{ header ("Location: closed.php"); } ?>
+<?php }else{ header ("Location: login.php"); } ?>
 
 </html>

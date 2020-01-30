@@ -191,7 +191,7 @@ if(isset($_SESSION['loggedin'])==true)
                     <script src="assets/js/plugins.js"></script>
                     <script src="assets/js/scripts.js"></script>
 </body>
-<?php }else{ header ("Location: closed.php"); } ?>
+<?php }else{ header ("Location: login.php"); } ?>
 </body>
 
 </html>
