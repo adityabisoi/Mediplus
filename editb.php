@@ -7,7 +7,7 @@ if (isset($_POST['submit']))
 $id=$_POST['id'];
 $quantity=mysqli_real_escape_string($db, $_POST['quantity']);
 
-mysqli_query($db,"UPDATE bloodbank SET quantity='$quantity' WHERE product_id='$id'");
+mysqli_query($db,"UPDATE resources SET quantity='$quantity' WHERE product_id='$id'");
 
 header("Location:blood_bank.php");
 }
@@ -17,7 +17,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0)
 {
 
 $id = $_GET['id'];
-$result = mysqli_query($db,"SELECT * FROM bloodbank WHERE product_id=".$_GET['id']);
+$result = mysqli_query($db,"SELECT * FROM resources WHERE product_id=".$_GET['id']);
 
 $row = mysqli_fetch_array($result);
 
