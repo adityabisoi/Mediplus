@@ -1,6 +1,6 @@
 <?php //starting session
 session_start();
-if(isset($_SESSION['loggedin'])==true)
+if(isset($_SESSION['loggedin1'])==true)
 { ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,19 +28,7 @@ if(isset($_SESSION['loggedin'])==true)
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
             <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.php">Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blood_bank.php">Blood Bank</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chat.php">Chat</a>
-                    </li>
-                    <?php if($_SESSION['loggedin']==true){ ?>
+                    <?php if($_SESSION['loggedin1']==true){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
                     </li><?php }else{}?>
@@ -50,7 +38,7 @@ if(isset($_SESSION['loggedin'])==true)
     </nav>
     <?php 
         $name=$type=$rname=$quan=$price="";
-        $name= $_SESSION['userDetails']['name'];
+        $name= $_SESSION['userDetails1']['name'];
         $status=true;
         if (!empty($_POST)) {
             if (empty($_POST['type'])) {
@@ -279,6 +267,6 @@ if(isset($_SESSION['loggedin'])==true)
                 crossorigin="anonymous">
             </script>
 </body>
-<?php }else{ header ("Location: login.php"); } ?>
+<?php }else{ header ("Location: pharmaLogin.php"); } ?>
 
 </html>

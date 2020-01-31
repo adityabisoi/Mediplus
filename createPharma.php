@@ -1,3 +1,7 @@
+<?php //starting session
+session_start();
+if(isset($_SESSION['loggedin'])==true)
+{ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="src/styles.css">
-    <link rel="stylesheet" href="src/styles1.css"> -->
+    <title>Create Pharmacy</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript">
         $(window).on('scroll', function () {
             if ($(window).scrollTop()) {
@@ -27,59 +28,48 @@
 <body>
     <?php
 
-    session_start();    //start the session
-
-    $pass=$uname="";
-    $status=true;
+    $un=$ps=$na="";
+    $na=$_SESSION['userDetails']['name'];
+    $status= true;
     if (!empty($_POST)) {
         if (empty($_POST['uname'])) {
             $status=false;
         }
         else {
-            $uname=$_POST['uname'];
+            $un=$_POST['uname'];
         }
-        if (empty($_POST['password'])) {
+        if (empty($_POST['pass'])) {
             $status=false;
         }
         else {
-            $pass=sha1($_POST['password']);
+            $ps=sha1($_POST['pass']);
         }
 
-        $servername= "localhost";
-        $username= "root";
-        $password= "";
-        $dbname="electrothon";
+    $servername= "localhost";
+    $username= "root";
+    $password= "";
+    $dbname="electrothon";
 
-        //create connection
-        $com= new mysqli($servername, $username, $password,$dbname);
+    //create connection
+    $com= new mysqli($servername, $username, $password,$dbname);
 
-        //check connection
-        if ($com->connect_error ) {
-            die("Connection failed ".$com->connect_error);
-        }
-        else{
-
-        if ($status) {
-            $sql="SELECT *
-                FROM login WHERE username='$uname' AND password='$pass'";
-            $result=$com->query($sql);//finding out how many rows are being returned
-            if ($result->num_rows > 0) {
-                $record= $result->fetch_assoc();//converting result to associative array
-                $_SESSION['loggedin']=true; //loggedin can be anything
-            // $_SESSION['']=$record
-                $_SESSION['userDetails']=$record;
-                header ("Location: index.php");
+    //check coonection
+    if ($com->connect_error ) {
+        die("Connection failed ".$com->connect_error);
+    }
+    else{
+        if($status){
+            $sql="INSERT INTO pharmalogin(username, password, name) values ('$un','$ps','$na')";
+            if ($com->query($sql)) {
+                header ('Location: pharmaLogin.php');
             }
             else{
-                echo "Invalid credentials. <br>";
+                echo "Error: ".$sql."<br>".$com->error;
             }
         $com->close();
-        }
-    }
-
+    }}
     }
     ?>
-
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
@@ -93,26 +83,19 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Signup</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pharmaLogin.php">Pharmacy</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="wrap">
-        <h1>Login</h1>
-        <form method="POST">
-            <p>Username:</p>
-            <input type="text" name="uname" placeholder="Username"><br>
-            <p>Password:</p>
-            <input type="password" name="password" placeholder="Password"><br>
-            <input type="submit" name="submit" value="Login">
+        <h2>Create here</h2>
+        <form method="post">
+            <input type="text" name="uname" placeholder="Username" required autofocus>
+            <input type="password" name="pass" placeholder="password" required>
+            <input type="submit" name="submit" value="Create">
         </form>
     </div>
-
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -123,5 +106,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
+<?php }else{ header ("Location: login.php"); } ?>
 
 </html>

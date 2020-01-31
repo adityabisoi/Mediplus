@@ -44,7 +44,7 @@ else{
 }
 
 
-//try
+try{
 function sendMail($email) {
     // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -90,8 +90,8 @@ function sendMail($email) {
 
     $mail->send();
     header('Location: blood_bank.php');
+}}
+ catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-//  catch (Exception $e) {
-//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-// }
 ?>

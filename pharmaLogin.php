@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Pharmacy Login</title>
     <!-- <link rel="stylesheet" href="src/styles.css">
     <link rel="stylesheet" href="src/styles1.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -29,7 +29,7 @@
 
     session_start();    //start the session
 
-    $pass=$uname="";
+    $pass=$uname=$name="";
     $status=true;
     if (!empty($_POST)) {
         if (empty($_POST['uname'])) {
@@ -37,6 +37,12 @@
         }
         else {
             $uname=$_POST['uname'];
+        }
+        if (empty($_POST['name'])) {
+            $status=false;
+        }
+        else {
+            $name=$_POST['name'];
         }
         if (empty($_POST['password'])) {
             $status=false;
@@ -61,14 +67,13 @@
 
         if ($status) {
             $sql="SELECT *
-                FROM login WHERE username='$uname' AND password='$pass'";
+                FROM pharmalogin WHERE name='$name' && username='$uname' && password='$pass'";
             $result=$com->query($sql);//finding out how many rows are being returned
             if ($result->num_rows > 0) {
                 $record= $result->fetch_assoc();//converting result to associative array
-                $_SESSION['loggedin']=true; //loggedin can be anything
-            // $_SESSION['']=$record
-                $_SESSION['userDetails']=$record;
-                header ("Location: index.php");
+                $_SESSION['loggedin1']=true; //loggedin can be anything
+                $_SESSION['userDetails1']=$record;
+                header ("Location: pharma.php");
             }
             else{
                 echo "Invalid credentials. <br>";
@@ -93,17 +98,19 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Signup</a>
+                    <a class="nav-link" href="login.php">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pharmaLogin.php">Pharmacy</a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
             </ul>
         </div>
     </nav>
     <div class="wrap">
         <h1>Login</h1>
         <form method="POST">
+            <p>Hospital name:</p>
+            <input type="text" name="name" placeholder="Name"><br>
             <p>Username:</p>
             <input type="text" name="uname" placeholder="Username"><br>
             <p>Password:</p>
