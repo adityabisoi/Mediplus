@@ -72,7 +72,7 @@ if(isset($_SESSION['loggedin'])==true)
                  while ($row = $result->fetch_assoc()) 
 				 {
                      $na=$row["name"];
-                    $sql1 = "SELECT address,city,phone,email FROM login WHERE name='$na' && city!='$city'";
+                    $sql1 = "SELECT address,city,phone,email FROM login WHERE name='$na' && city='$city'";
                     $result1 = $conn->query($sql1);
                     if ($result1 -> num_rows >  0) {
                        

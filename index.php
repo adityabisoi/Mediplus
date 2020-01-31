@@ -58,7 +58,7 @@ if(isset($_SESSION['loggedin'])==true)
             <div class="col-lg-6 mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Supplies</h4>
+                        <h4 class="header-title">Vaccine Supplies</h4>
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table text-dark text-center">
@@ -78,7 +78,7 @@ if(isset($_SESSION['loggedin'])==true)
                                     <tbody>
                                         <?php 
 $conn = new mysqli("localhost","root","","electrothon");
-$sql = "SELECT * FROM resources WHERE name='$name' ";
+$sql = "SELECT * FROM resources WHERE name='$name' && type='vaccine' ";
 $result = $conn->query($sql);
     $count=0;
 if ($result -> num_rows >  0) {
@@ -94,6 +94,124 @@ if ($result -> num_rows >  0) {
                                             <th><?php echo $row["type"] ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["price"]  ?></th>
+                                            <th><?php echo $row["quantity"]  ?></th>
+
+                                            <!-- <th> <a href="up" Edit</a> <a
+                                                href="edit.php?id=<?php echo $row["product_id"] ?>">Edit</a>
+                                            <a href="up" Edit</a> <a
+                                                href="delete.php?id=<?php echo $row["product_id"] ?>">Delete</a>
+                                        </th> -->
+
+
+                                        </tr>
+                                        <?php
+ 
+ }
+}
+
+?>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="header-title">Medicine Supplies</h4>
+                        <div class="single-table">
+                            <div class="table-responsive">
+                                <table class="table text-dark text-center">
+                                    <thead class="text-uppercase">
+                                        <tr class="table-active">
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Quantity</th>
+                                            <!-- <th scope="col">Action</th> -->
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+$conn = new mysqli("localhost","root","","electrothon");
+$sql = "SELECT * FROM resources WHERE name='$name' && type='medicine' ";
+$result = $conn->query($sql);
+    $count=0;
+if ($result -> num_rows >  0) {
+  
+ while ($row = $result->fetch_assoc()) 
+ {
+      $count=$count+1;
+   ?>
+
+
+                                        <tr>
+                                            <th><?php echo $count ?></th>
+                                            <th><?php echo $row["type"] ?></th>
+                                            <th><?php echo $row["rname"] ?></th>
+                                            <th><?php echo $row["price"]  ?></th>
+                                            <th><?php echo $row["quantity"]  ?></th>
+
+                                            <!-- <th> <a href="up" Edit</a> <a
+                                                href="edit.php?id=<?php echo $row["product_id"] ?>">Edit</a>
+                                            <a href="up" Edit</a> <a
+                                                href="delete.php?id=<?php echo $row["product_id"] ?>">Delete</a>
+                                        </th> -->
+
+
+                                        </tr>
+                                        <?php
+ 
+ }
+}
+
+?>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="header-title">Blood Bank Supplies</h4>
+                        <div class="single-table">
+                            <div class="table-responsive">
+                                <table class="table text-dark text-center">
+                                    <thead class="text-uppercase">
+                                        <tr class="table-active">
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Quantity</th>
+                                            <!-- <th scope="col">Action</th> -->
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+$conn = new mysqli("localhost","root","","electrothon");
+$sql = "SELECT * FROM resources WHERE name='$name' && type='blood'";
+$result = $conn->query($sql);
+    $count=0;
+if ($result -> num_rows >  0) {
+  
+ while ($row = $result->fetch_assoc()) 
+ {
+      $count=$count+1;
+   ?>
+
+
+                                        <tr>
+                                            <th><?php echo $count ?></th>
+                                            <th><?php echo $row["type"] ?></th>
+                                            <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["quantity"]  ?></th>
 
                                             <!-- <th> <a href="up" Edit</a> <a
