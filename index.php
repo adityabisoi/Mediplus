@@ -32,10 +32,10 @@ if(isset($_SESSION['loggedin'])==true)
                     <a class="nav-link" href="search.php">Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pharma.php">Pharmacy</a>
+                    <a class="nav-link" href="createPharma.php">Create Pharmacy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="blood_bank.php">Blood Bank</a>
+                    <a class="nav-link" href="createBloodBank.php">Create Blood Bank</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="chat.php">Chat</a>
@@ -78,7 +78,7 @@ if(isset($_SESSION['loggedin'])==true)
                                     <tbody>
                                         <?php 
 $conn = new mysqli("localhost","root","","electrothon");
-$sql = "SELECT * FROM resources WHERE name='$name' && (type='medicine' || type='vaccine')";
+$sql = "SELECT * FROM resources WHERE name='$name' ";
 $result = $conn->query($sql);
     $count=0;
 if ($result -> num_rows >  0) {

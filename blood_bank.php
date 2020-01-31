@@ -1,6 +1,6 @@
 <?php //starting session
 session_start();
-if(isset($_SESSION['loggedin'])==true)
+if(isset($_SESSION['loggedin2'])==true)
 { ?>
 
 <!doctype html>
@@ -54,7 +54,7 @@ if(isset($_SESSION['loggedin'])==true)
                     <li class="nav-item">
                         <a class="nav-link" href="chat.php">Chat</a>
                     </li>
-                    <?php if($_SESSION['loggedin']==true){ ?>
+                    <?php if($_SESSION['loggedin2']==true){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
                     </li><?php }else{}?>
@@ -65,7 +65,7 @@ if(isset($_SESSION['loggedin'])==true)
     <?php 
         $rname=$quantity="";
         $type='blood';
-        $name= $_SESSION['userDetails']['name'];
+        $name= $_SESSION['userDetails2']['name'];
         $status=true;
         if (!empty($_POST)) {
             if (empty($_POST['rname'])) {
@@ -224,7 +224,7 @@ if(isset($_SESSION['loggedin'])==true)
                         crossorigin="anonymous">
                     </script>
 </body>
-<?php }else{ header ("Location: login.php"); } ?>
+<?php }else{ header ("Location: bloodBankLogin.php"); } ?>
 </body>
 
 </html>
