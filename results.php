@@ -52,13 +52,16 @@ if(isset($_SESSION['loggedin'])==true)
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">Name</th>
-
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">E-mail</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php 
-                $rname=$_POST['rname'];
+                $rname=$_POST['rname'];$na="";
                 $name= $_SESSION['userDetails']['name'];
+                $city= $_SESSION['userDetails']['city'];
                 $type=$_POST['type'];
                $conn = new mysqli("localhost","root","","electrothon");
                $sql = "SELECT name FROM resources WHERE type='$type' && rname='$rname' && name!='$name' ";
@@ -68,16 +71,28 @@ if(isset($_SESSION['loggedin'])==true)
 				  
                  while ($row = $result->fetch_assoc()) 
 				 {
+                     $na=$row["name"];
+                    $sql1 = "SELECT address,city,phone,email FROM login WHERE name='$na' && city!='$city'";
+                    $result1 = $conn->query($sql1);
+                    if ($result1 -> num_rows >  0) {
+                       
+                      while ($row1 = $result1->fetch_assoc()) 
+                      {
                    ?>
 
 
                                             <tr>
                                                 <th><?php echo $row["name"] ?></th>
+                                                <th><?php echo $row1["address"] ?></th>
+                                                <th><?php echo $row1["phone"] ?></th>
+                                                <th><?php echo $row1["email"] ?></th>
                                             </tr>
                                             <?php
                  
                  }
                }
+            }
+        }
 
             ?>
 

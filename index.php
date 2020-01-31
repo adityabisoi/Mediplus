@@ -50,7 +50,7 @@ if(isset($_SESSION['loggedin'])==true)
     </nav>
     <?php $name="";
     $name= $_SESSION['userDetails']['name']; ?>
-
+    
     <div class="main-content-inner">
         <div class="row">
 

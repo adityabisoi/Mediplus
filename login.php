@@ -60,7 +60,7 @@
         else{
 
         if ($status) {
-            $sql="SELECT name, username, password
+            $sql="SELECT *
                 FROM login WHERE username='$uname' AND password='$pass'";
             $result=$com->query($sql);//finding out how many rows are being returned
             if ($result->num_rows > 0) {
