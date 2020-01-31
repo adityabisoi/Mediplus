@@ -9,33 +9,47 @@ if(isset($_SESSION['loggedin'])==true)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-    </div>
-    <!-- <div class="mx-auto order-0">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <span class="navbar-brand mb-0 h1">Navbar</span>
+        </div>
+        <!-- <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div> -->
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Right</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Right</a>
+                </li> -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.php">Pharmacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blood_bank.php">Blood Bank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">Chat</a>
+                    </li>
+                    <?php if($_SESSION['loggedin']==true){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li><?php }else{}?>
+                </ul>
+        </div>
+    </nav>
 
 
     <div>
@@ -62,7 +76,7 @@ if(isset($_SESSION['loggedin'])==true)
         </body>
 
 
-    
+
 
 
 

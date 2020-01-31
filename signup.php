@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Signup</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -108,26 +108,23 @@
     }
     ?>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-    </div>
-    <!-- <div class="mx-auto order-0">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <span class="navbar-brand mb-0 h1">Navbar</span>
+        </div>
+        <!-- <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div> -->
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Right</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="wrap">
         <h2>Sign Up here</h2>
         <form method="post">
@@ -140,7 +137,7 @@
             <input type="text" name="city" placeholder="City" required>
             <input type="text" name="dist" placeholder="District" required>
             <input type="text" name="state" placeholder="State" required>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Signup">
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

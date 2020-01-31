@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-    <title></title>
+    <title>Donate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript">
@@ -31,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>

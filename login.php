@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
     <!-- <link rel="stylesheet" href="src/styles.css">
     <link rel="stylesheet" href="src/styles1.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -80,27 +80,27 @@
     }
     ?>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-    </div>
-    <!-- <div class="mx-auto order-0">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <span class="navbar-brand mb-0 h1">Navbar</span>
+        </div>
+        <!-- <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div> -->
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Right</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.php">Signup</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
     <div class="wrap">
         <h1>Login</h1>
         <form method="POST">
@@ -108,7 +108,7 @@
             <input type="text" name="uname" placeholder="Username"><br>
             <p>Password:</p>
             <input type="password" name="password" placeholder="Password"><br>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Login">
         </form>
     </div>
 

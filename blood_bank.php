@@ -9,7 +9,7 @@ if(isset($_SESSION['loggedin'])==true)
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inventory Management System</title>
+    <title>Blood Bank</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -38,14 +38,24 @@ if(isset($_SESSION['loggedin'])==true)
         </button>
     </div> -->
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Right</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
+        <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.php">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.php">Pharmacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">Chat</a>
+                    </li>
+                    <?php if($_SESSION['loggedin']==true){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li><?php }else{}?>
+                </ul>
         </div>
     </nav>
 
@@ -185,7 +195,7 @@ if(isset($_SESSION['loggedin'])==true)
                             </div>
                         </div>
 
-                       
+
 
 
 
@@ -197,7 +207,7 @@ if(isset($_SESSION['loggedin'])==true)
                     <!-- page container area end -->
                     <!-- offset area start -->
 
-                    
+
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
                         crossorigin="anonymous">
