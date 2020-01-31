@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <?php
 
-        $na=$em=$ty="";
+        $na=$em=$ty=$dct="";
         $status=true;
         if(!empty($_POST))
             {
@@ -77,6 +77,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 else{
                     $status=false;
                 }
+                if(!empty($_POST["dcity"]))
+                    {
+                        $dct=$_POST["dcity"];
+                    }
+                else{
+                    $status=false;
+                }
 
         //db connection
 
@@ -96,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             if($status)
             {
                 
-                $sql=  "INSERT INTO donor (name ,email, type) values('$na','$em','$ty') " ;
+                $sql=  "INSERT INTO donor (name ,email, type, dcity) values('$na','$em','$ty','$dct') " ;
                 if($conn->query($sql)){
                     header('Location: thank.html');
                 }
@@ -119,6 +126,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <form action="#" method="post">
                     <input class="text" type="text" name="name" placeholder="Name" required autofocus>
                     <input class="text email" type="email" name="email" placeholder="Email" required>
+                    <input class="text email" type="text" name="dcity" placeholder="City" required>
                     <select name="type">
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>

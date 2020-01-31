@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$city= $_SESSION['userDetails']['city'];
 
 // if($_SESSION['loggedin']==true)
 // {
@@ -30,7 +31,7 @@ if($conn-> connect_error)
     die("Connection failed".$conn-> connect_error);
 }
 else{
-    $sql="SELECT email FROM donor WHERE type='$type'";
+    $sql="SELECT email FROM donor WHERE type='$type' && dcity='$city'";
     $result=$conn->query($sql);
     if($result->num_rows>0)
         {
@@ -48,7 +49,7 @@ function sendMail($email) {
     // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
     $name= $_SESSION['userDetails']['name'];
-    $address= $_SESSION['userDetails']['email'];
+    $address= $_SESSION['userDetails']['address'];
     $type=$_POST['type'];
 
 
@@ -84,10 +85,11 @@ function sendMail($email) {
     $mail->Subject = 'Blood needed urgently !';
     // $mail->Body    = $bgroup." blood needed urgently.Please contact ".$rname." at ".$number." as soon as possible.";
     $mail->Body    =$type." blood needed ugently in ".$name." hospital at ".$address." .Please contact them as soon as possible.";
+    $mail->Body    = "Hello ! This is to inform you that ".$type." blood is required in ".$name." at ".$address." .Please donate as soon as possible.Thank You.";
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    header('Location: test.php');
+    header('Location: blood_bank.php');
 }
 //  catch (Exception $e) {
 //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
