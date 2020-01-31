@@ -31,10 +31,7 @@ if(isset($_SESSION['loggedin'])==true)
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Right</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                 </ul>
             </div>
@@ -60,10 +57,11 @@ if(isset($_SESSION['loggedin'])==true)
                                         </thead>
                                         <tbody>
                                             <?php 
-                $name=$_POST['name'];
+                $rname=$_POST['rname'];
+                $name= $_SESSION['userDetails']['name'];
                 $type=$_POST['type'];
                $conn = new mysqli("localhost","root","","electrothon");
-               $sql = "SELECT name FROM resources WHERE type='$type' && rname='$name' ";
+               $sql = "SELECT name FROM resources WHERE type='$type' && rname='$rname' && name!='$name' ";
                $result = $conn->query($sql);
 					$count=0;
                if ($result -> num_rows >  0) {

@@ -49,6 +49,9 @@ if(isset($_SESSION['loggedin'])==true)
                         <a class="nav-link" href="pharma.php">Pharmacy</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="request.php">Request</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="chat.php">Chat</a>
                     </li>
                     <?php if($_SESSION['loggedin']==true){ ?>
@@ -157,7 +160,7 @@ if(isset($_SESSION['loggedin'])==true)
                                         <tbody>
                                             <?php 
                $conn = new mysqli("localhost","root","","electrothon");
-               $sql = "SELECT * FROM resources WHERE type='blood'";
+               $sql = "SELECT * FROM resources WHERE name='$name' && type='blood'";
                $result = $conn->query($sql);
 					$count=0;
                if ($result -> num_rows >  0) {

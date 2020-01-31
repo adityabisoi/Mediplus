@@ -67,7 +67,7 @@ if(isset($_SESSION['loggedin'])==true)
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="rname">
 
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>

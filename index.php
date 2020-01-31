@@ -48,6 +48,8 @@ if(isset($_SESSION['loggedin'])==true)
             </ul>
         </div>
     </nav>
+    <?php $name="";
+    $name= $_SESSION['userDetails']['name']; ?>
 
     <div class="main-content-inner">
         <div class="row">
@@ -76,7 +78,7 @@ if(isset($_SESSION['loggedin'])==true)
                                     <tbody>
                                         <?php 
 $conn = new mysqli("localhost","root","","electrothon");
-$sql = "SELECT * FROM resources WHERE type='medicine' || type='vaccine'";
+$sql = "SELECT * FROM resources WHERE name='$name' && (type='medicine' || type='vaccine')";
 $result = $conn->query($sql);
     $count=0;
 if ($result -> num_rows >  0) {

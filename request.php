@@ -40,14 +40,24 @@ if(isset($_SESSION['loggedin'])==true)
         </button>
     </div> -->
 		<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Right</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-			</ul>
+		<ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.php">Pharmacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blood_bank.php">Blood Bank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">Chat</a>
+                    </li>
+                    <?php if($_SESSION['loggedin']==true){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li><?php }else{}?>
+                </ul>
 		</div>
 	</nav>
 	<!-- main -->

@@ -98,7 +98,7 @@
         if($status){
             $sql="INSERT INTO login(username, password, name, address, city, dist, state, phone, email) values ('$un','$ps','$na','$ad','$ct','$ds','$st','$ph','$em')";
             if ($com->query($sql)) {
-                header ('Location: hello.php');
+                header ('Location: login.php');
             }
             else{
                 echo "Error: ".$sql."<br>".$com->error;
