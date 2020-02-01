@@ -6,22 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blood Bank Login</title>
-    <!-- <link rel="stylesheet" href="src/styles.css">
-    <link rel="stylesheet" href="src/styles1.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!-- Font Icon -->
+     <link rel="stylesheet" href="src/login/fonts/material-icon/css/material-design-iconic-font.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript">
-        $(window).on('scroll', function () {
-            if ($(window).scrollTop()) {
-                $('nav').addClass('black');
-
-            } else {
-                $('nav').removeClass('black');
-            }
-        })
-    </script>
+<!-- Main css -->
+<link rel="stylesheet" href="src/login/css/style.css">
+    
 </head>
 
 <body>
@@ -86,7 +76,7 @@
     ?>
 
 
-    <div class="wrap">
+    <!-- <div class="wrap">
         <h1>Login</h1>
         <form method="POST">
             <p>Hospital name:</p>
@@ -97,18 +87,39 @@
             <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" name="submit" value="Login">
         </form>
+    </div> -->
+
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Pharmacy Login</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="uname" id="name" placeholder="Username"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
     </div>
+<script src="src/login/js/main.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
