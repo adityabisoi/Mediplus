@@ -40,11 +40,11 @@ if(isset($_SESSION['loggedin'])==true)
         </button>
     </div> -->
 		<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-		<ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.php">Home</a>
+				</li>
+				<!-- <li class="nav-item">
                         <a class="nav-link" href="pharma.php">Pharmacy</a>
                     </li>
                     <li class="nav-item">
@@ -52,16 +52,18 @@ if(isset($_SESSION['loggedin'])==true)
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="chat.php">Chat</a>
-                    </li>
-                    <?php if($_SESSION['loggedin']==true){ ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li><?php }else{}?>
-                </ul>
+                    </li> -->
+				<?php if($_SESSION['loggedin']==true){ ?>
+				<li class="nav-item">
+					<a class="nav-link" href="logout.php">Logout</a>
+				</li><?php }else{}?>
+			</ul>
 		</div>
 	</nav>
+	<br><br>
+	<h1 style="text-align:center">Request Blood</h1><br><br>
 	<!-- main -->
-	<div class="main-w3layouts wrapper">
+	<!-- <div class="main-w3layouts wrapper">
 		<h1>Enter Your Details</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
@@ -84,7 +86,35 @@ if(isset($_SESSION['loggedin'])==true)
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<form method="POST" class="form-inline" action="mailer.php" style="margin-left:54em;">
+		<!-- <div class="form-group">
+			<input class="form-control mr-sm-2" name="name" type="search" placeholder="Name" aria-label="Search">
+
+		</div>
+		<div class="form-group">
+			<input class="form-control mr-sm-2" name="email" type="email" placeholder="E-mail" aria-label="Search">
+
+		</div>
+		<div class="form-group">
+			<input class="form-control mr-sm-2" name="dcity" type="search" placeholder="City" aria-label="Search">
+
+		</div> -->
+		<div class="form-group">
+			<select style="margin-right:10px;" name="type" class="form-control" id="exampleFormControlSelect1">
+				<option value="A+">A+</option>
+				<option value="A-">A-</option>
+				<option value="B+">B+</option>
+				<option value="B-">B-</option>
+				<option value="O+">O+</option>
+				<option value="O-">O-</option>
+				<option value="AB+">AB+</option>
+				<option value="AB-">AB-</option>
+			</select>
+		</div>
+
+		<button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Submit</button>
+	</form>
 	<!-- //main -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

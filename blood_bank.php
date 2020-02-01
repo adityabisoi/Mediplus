@@ -50,10 +50,10 @@ if(isset($_SESSION['loggedin2'])==true)
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="request.php">Request</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chat.php">Chat</a>
                     </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="request.php">Request Blood</a>
+                    </li> 
                 <?php if($_SESSION['loggedin2']==true){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
