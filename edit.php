@@ -88,7 +88,7 @@ echo "No results!";
 
             <tr align="Right">
                 <td colspan="2"><label>
-                        <input type="submit" name="submit" value="Edit Records">
+                        <input type="submit" name="submit" value="Save">
                     </label></td>
             </tr>
         </table>

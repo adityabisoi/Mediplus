@@ -27,7 +27,7 @@ if(isset($_SESSION['loggedin2'])==true)
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -38,8 +38,8 @@ if(isset($_SESSION['loggedin2'])==true)
         </button>
     </div> -->
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
@@ -53,12 +53,12 @@ if(isset($_SESSION['loggedin2'])==true)
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="chat.php">Chat</a>
-                    </li>
-                    <?php if($_SESSION['loggedin2']==true){ ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li><?php }else{}?>
-                </ul>
+                    </li> -->
+                <?php if($_SESSION['loggedin2']==true){ ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li><?php }else{}?>
+            </ul>
         </div>
     </nav>
 
@@ -110,13 +110,13 @@ if(isset($_SESSION['loggedin2'])==true)
         }
     ?>
     <div>
-
-        <h1 style="text-align:center">Add Item Here</h1><br>
+        <br><br>
+        <h1 style="text-align:center">Blood Supplies</h1><br>
 
         <body>
-            <form method="POST" class="form-inline">
+            <form method="POST" class="form-inline" style="margin-left:48em;">
                 <div class="form-group">
-                    <select name="rname">
+                    <select style="margin-right:10px;" name="rname" class="form-control" id="exampleFormControlSelect1">
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -127,25 +127,26 @@ if(isset($_SESSION['loggedin2'])==true)
                         <option value="AB-">AB-</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="name">Quantity</label>
+                <!-- <div class="form-group">
+                    <label style="padding-right:10px;padding-left:10px;" for="name">Quantity</label>
                     <input type="number" name="quantity">
                 </div>
-                <button type="submit" class="btn btn-default" name="add">Add item</button>
-
+                <button style="padding-right:10px;padding-left:10px;" type="submit" class="btn btn-default" name="add">Add Supply</button> -->
+                <div class="form-group">
+                    <input class="form-control mr-sm-2" name="quantity" type="search" placeholder="Quantity" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Add</button>
+                </div>
             </form>
         </body>
         <div class="main-content-inner">
             <div class="row">
 
-                <!-- Contextual Classes start -->
-                <div class="col-lg-6 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title">Details</h4>
+                <div class="col-lg-7 mt-5" style="margin-left:26em;">
+                    <div>
+                        <div class="card-body" style="text-align:center;">
                             <div class="single-table">
                                 <div class="table-responsive">
-                                    <table class="table text-dark text-center">
+                                    <table class="table table-bordered">
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">ID</th>
@@ -172,14 +173,13 @@ if(isset($_SESSION['loggedin2'])==true)
 
 
                                             <tr>
-                                                <th><?php echo $count ?></th>
-                                                <th><?php echo $row["rname"]  ?></th>
-                                                <th><?php echo $row["quantity"]  ?></th>
+                                                <th scope="row"><?php echo $count ?></th>
+                                                <th scope="row"><?php echo $row["rname"]  ?></th>
+                                                <th scope="row"><?php echo $row["quantity"]  ?></th>
 
-                                                <th> <a href="up" Edit</a> <a
+                                                <th scope="row"> <a href="up" Edit</a> <a
                                                         href="editb.php?id=<?php echo $row["product_id"] ?>">Edit</a>
-                                                    <!-- <a href="up" Edit</a> <a
-                                                        href="deleteb.php?id=<?php echo $row["product_id"] ?>">Delete</a> -->
+
                                                 </th>
 
 
@@ -197,15 +197,6 @@ if(isset($_SESSION['loggedin2'])==true)
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
                     </div>
                     <!-- page container area end -->
                     <!-- offset area start -->

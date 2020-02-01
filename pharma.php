@@ -15,7 +15,7 @@ if(isset($_SESSION['loggedin1'])==true)
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -95,18 +95,19 @@ if(isset($_SESSION['loggedin1'])==true)
         }
     ?>
     <div>
+    <br><br>
 
-        <h1 style="text-align:center">Add Item Here</h1><br>
+        <h1 style="text-align:center">Medications</h1><br>
 
         <body>
-            <form method="POST" class="form-inline">
+            <form method="POST" class="form-inline" style="margin-left:28em;">
                 <div class="form-group">
-                    <select name="type">
+                    <select style="margin-right:10px;" name="type" class="form-control" id="exampleFormControlSelect1">
                         <option value="medicine">Medicine</option>
                         <option value="vaccine">Vaccine</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="name">Product Name</label>
                     <input type="text" class="form-control" name="rname">
 
@@ -119,21 +120,30 @@ if(isset($_SESSION['loggedin1'])==true)
                     <label for="name">Quantity</label>
                     <input type="number" name="quan" id="quant" min="1" max="">
                 </div>
-                <button type="submit" class="btn btn-default" name="add">Add item</button>
-
+                <button type="submit" class="btn btn-default" name="add">Add item</button> -->
+                <div class="form-group">
+                <input class="form-control mr-sm-2" name="rname" type="search" placeholder="Product Name" aria-label="Search">
+                </div>
+                <div class="form-group">
+                <input class="form-control mr-sm-2" name="price" type="search" placeholder="Price" aria-label="Search">
+                </div>
+                <div class="form-group">
+                <input class="form-control mr-sm-2" name="quan" type="search" placeholder="Quantity" aria-label="Search">
+                </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Add</button>
             </form>
         </body>
         <div class="main-content-inner">
             <div class="row">
 
                 <!-- Contextual Classes start -->
-                <div class="col-lg-6 mt-5">
-                    <div class="card">
-                        <div class="card-body">
+                <div class="col-lg-6 mt-5" style="margin-left:26em;">
+                    <div>
+                        <div class="card-body" style="text-align:center;">
                             <h4 class="header-title">Medicines</h4>
                             <div class="single-table">
                                 <div class="table-responsive">
-                                    <table class="table text-dark text-center">
+                                    <table class="table table-bordered">
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">ID</th>
@@ -161,12 +171,12 @@ if(isset($_SESSION['loggedin1'])==true)
 
 
                                             <tr>
-                                                <th><?php echo $count ?></th>
-                                                <th><?php echo $row["rname"] ?></th>
-                                                <th><?php echo $row["price"]  ?></th>
-                                                <th><?php echo $row["quantity"]  ?></th>
+                                                <th scope="row"><?php echo $count ?></th>
+                                                <th scope="row"><?php echo $row["rname"] ?></th>
+                                                <th scope="row"><?php echo $row["price"]  ?></th>
+                                                <th scope="row"><?php echo $row["quantity"]  ?></th>
 
-                                                <th> <a href="up" Edit</a> <a
+                                                <th scope="row"> <a href="up" Edit</a> <a
                                                         href="edit.php?id=<?php echo $row["product_id"] ?>">Edit</a>
                                                     <a href="up" Edit</a> <a
                                                         href="delete.php?id=<?php echo $row["product_id"] ?>">Delete</a>
@@ -187,11 +197,11 @@ if(isset($_SESSION['loggedin1'])==true)
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="text-align:center;">
                             <h4 class="header-title">Vaccines</h4>
                             <div class="single-table">
                                 <div class="table-responsive">
-                                    <table class="table text-dark text-center">
+                                    <table class="table table-bordered">
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">ID</th>

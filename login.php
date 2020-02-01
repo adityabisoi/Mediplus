@@ -132,6 +132,9 @@
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
                         </div>
                     </form>
+                    <p class="loginhere">
+                        Don't have an account ? <a href="signup.php" class="loginhere-link">Signup here</a>
+                    </p>
                 </div>
             </div>
         </section>

@@ -16,7 +16,7 @@ if(isset($_SESSION['loggedin'])==true)
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -50,22 +50,20 @@ if(isset($_SESSION['loggedin'])==true)
     </nav>
     <?php $name="";
     $name= $_SESSION['userDetails']['name']; ?>
-    
     <div class="main-content-inner">
         <div class="row">
 
             <!-- Contextual Classes start -->
-            <div class="col-lg-6 mt-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="header-title">Vaccine Supplies</h4>
+            <div class="col-lg-6 mt-5" style="margin-left:26em;">
+                <div >
+                    <div class="card-body" style="text-align:center;">
+                        <h4 style="text-align:center" class="header-title">Vaccine Supplies</h4>
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-dark text-center">
+                                <table class="table table-bordered">
                                     <thead class="text-uppercase">
                                         <tr class="table-active">
                                             <th scope="col">ID</th>
-                                            <th scope="col">Type</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Quantity</th>
@@ -91,7 +89,6 @@ if ($result -> num_rows >  0) {
 
                                         <tr>
                                             <th><?php echo $count ?></th>
-                                            <th><?php echo $row["type"] ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["price"]  ?></th>
                                             <th><?php echo $row["quantity"]  ?></th>
@@ -117,15 +114,14 @@ if ($result -> num_rows >  0) {
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="header-title">Medicine Supplies</h4>
+                    <div class="card-body" style="text-align:center;">
+                        <h4 style="text-align:center" class="header-title">Medicine Supplies</h4>
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-dark text-center">
+                                <table class="table table-bordered">
                                     <thead class="text-uppercase">
                                         <tr class="table-active">
                                             <th scope="col">ID</th>
-                                            <th scope="col">Type</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Quantity</th>
@@ -151,7 +147,6 @@ if ($result -> num_rows >  0) {
 
                                         <tr>
                                             <th><?php echo $count ?></th>
-                                            <th><?php echo $row["type"] ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["price"]  ?></th>
                                             <th><?php echo $row["quantity"]  ?></th>
@@ -177,15 +172,14 @@ if ($result -> num_rows >  0) {
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="header-title">Blood Bank Supplies</h4>
+                    <div class="card-body" style="text-align:center;">
+                        <h4 style="text-align:center" class="header-title">Blood Bank Supplies</h4>
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-dark text-center">
+                                <table class="table table-bordered">
                                     <thead class="text-uppercase">
                                         <tr class="table-active">
                                             <th scope="col">ID</th>
-                                            <th scope="col">Type</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Quantity</th>
                                             <!-- <th scope="col">Action</th> -->
@@ -210,7 +204,6 @@ if ($result -> num_rows >  0) {
 
                                         <tr>
                                             <th><?php echo $count ?></th>
-                                            <th><?php echo $row["type"] ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["quantity"]  ?></th>
 
