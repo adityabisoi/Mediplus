@@ -59,7 +59,7 @@
 
         if ($status) {
             $sql="SELECT *
-                FROM pharmalogin WHERE name='$name' && ambno='$uname' && password='$pass'";
+                FROM amblogin WHERE name='$name' && ambno='$uname' && password='$pass'";
             $result=$com->query($sql);
             if ($result->num_rows > 0) {
                 $record= $result->fetch_assoc();
