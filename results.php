@@ -51,7 +51,7 @@ if(isset($_SESSION['loggedin'])==true)
                                     <table class="table table-bordered">
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Available Hospitals</th>
                                                 <!-- <th scope="col">Address</th>
                                                 <th scope="col">Phone</th>
                                                 <th scope="col">E-mail</th> -->

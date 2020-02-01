@@ -38,6 +38,9 @@ if(isset($_SESSION['loggedin'])==true)
                     <a class="nav-link" href="createBloodBank.php">Create Blood Bank</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="createAmbulance.php">Create Ambulance</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="chat.php">Chat</a>
                 </li>
                 <?php if($_SESSION['loggedin']==true){ ?>

@@ -143,6 +143,9 @@
                     </p>
                     <p class="loginhre">
                         <a href="pharmaLogin.php" class="loginhere-link">Pharmacy Login</a>
+                    </p>
+                    <p class="loginhre">
+                        <a href="ambulanceLogin.php" class="loginhere-link">Ambulance Login</a>
                     </p></center>
                 </div>
             </div>
