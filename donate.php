@@ -117,12 +117,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     }
 
     ?>
-
+    <br><br>
+    <h1 style="text-align:center">Blood Supplies</h1><br><br>
     <!-- main html -->
-    <div class="main-w3layouts wrapper">
-        <h1>Signup Here</h1>
-        <div class="main-agileinfo">
-            <div class="agileits-top">
+    <!-- <div >
+        <div >
+            <div>
                 <form action="#" method="post">
                     <input class="text" type="text" name="name" placeholder="Name" required autofocus>
                     <input class="text email" type="email" name="email" placeholder="Email" required>
@@ -147,7 +147,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
 
-    </div>
+    </div> -->
+    <form method="POST" class="form-inline" style="margin-left:32em;">
+        <div class="form-group">
+            <input class="form-control mr-sm-2" name="name" type="search" placeholder="Name"
+                aria-label="Search">
+
+        </div>
+        <div class="form-group">
+            <input class="form-control mr-sm-2" name="email" type="email" placeholder="E-mail"
+                aria-label="Search">
+
+        </div>
+        <div class="form-group">
+            <input class="form-control mr-sm-2" name="dcity" type="search" placeholder="City"
+                aria-label="Search">
+
+        </div>
+        <div class="form-group">
+            <select style="margin-right:10px;" name="type" class="form-control" id="exampleFormControlSelect1">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+
+        <button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Submit</button>
+    </form>
     <!-- //main -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
