@@ -31,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>

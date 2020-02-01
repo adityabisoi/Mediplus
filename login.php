@@ -85,7 +85,7 @@
     }
     ?>
 
-    <!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -134,7 +134,13 @@
                     </form>
                     <p class="loginhere">
                         Don't have an account ? <a href="signup.php" class="loginhere-link">Signup here</a>
+                    </p><center>
+                    <p class="loginhre">
+                        <a href="bloodBankLogin.php" class="loginhere-link">Blood Bank Login</a>
                     </p>
+                    <p class="loginhre">
+                        <a href="pharmaLogin.php" class="loginhere-link">Pharmacy Login</a>
+                    </p></center>
                 </div>
             </div>
         </section>

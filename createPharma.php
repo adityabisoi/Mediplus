@@ -70,7 +70,7 @@ if(isset($_SESSION['loggedin'])==true)
     }}
     }
     ?>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -88,14 +88,30 @@ if(isset($_SESSION['loggedin'])==true)
             </ul>
         </div>
     </nav>
-    <div class="wrap">
+    <!-- <div class="wrap">
         <h2>Create here</h2>
         <form method="post">
             <input type="text" name="uname" placeholder="Username" required autofocus>
             <input type="password" name="pass" placeholder="password" required>
             <input type="submit" name="submit" value="Create">
         </form>
-    </div>
+    </div> -->
+    <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

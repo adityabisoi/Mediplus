@@ -70,24 +70,7 @@ if(isset($_SESSION['loggedin'])==true)
     }}
     }
     ?>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
-        </div>
-        <!-- <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div> -->
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
     <div class="wrap">
         <h2>Create here</h2>
         <form method="post">

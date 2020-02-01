@@ -18,7 +18,7 @@ if(isset($_SESSION['loggedin'])==true)
 
 
     <div>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <span class="navbar-brand mb-0 h1">Navbar</span>
             </div>
@@ -35,26 +35,26 @@ if(isset($_SESSION['loggedin'])==true)
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav><br><br>
 
-        <h1 style="text-align:center">Add Item Here</h1><br>
+        <h1 style="text-align:center">Search Results</h1><br>
         <div class="main-content-inner">
             <div class="row">
 
                 <!-- Contextual Classes start -->
-                <div class="col-lg-6 mt-5">
-                    <div class="card">
-                        <div class="card-body">
+                <div class="col-lg-6 mt-5" style="margin-left:26em;">
+                    <div >
+                        <div class="card-body"  style="text-align:center;">
                             <!-- <h4 class="header-title">Medicines</h4> -->
                             <div class="single-table">
                                 <div class="table-responsive">
-                                    <table class="table text-dark text-center">
+                                    <table class="table table-bordered">
                                         <thead class="text-uppercase">
                                             <tr class="table-active">
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Address</th>
+                                                <!-- <th scope="col">Address</th>
                                                 <th scope="col">Phone</th>
-                                                <th scope="col">E-mail</th>
+                                                <th scope="col">E-mail</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -82,10 +82,10 @@ if(isset($_SESSION['loggedin'])==true)
 
 
                                             <tr>
-                                                <th><?php echo $row["name"] ?></th>
-                                                <th><?php echo $row1["address"] ?></th>
+                                                <th><?php echo $row["name"].",  ".$row1["address"].", Phone:  ".$row1["phone"].", E-mail:  ",$row1["email"] ?></th>
+                                                <!-- <th><?php echo $row1["address"] ?></th>
                                                 <th><?php echo $row1["phone"] ?></th>
-                                                <th><?php echo $row1["email"] ?></th>
+                                                <th><?php echo $row1["email"] ?></th> -->
                                             </tr>
                                             <?php
                  

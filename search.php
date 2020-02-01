@@ -15,7 +15,7 @@ if(isset($_SESSION['loggedin'])==true)
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </div>
@@ -53,12 +53,13 @@ if(isset($_SESSION['loggedin'])==true)
 
 
     <div>
-
+    <br><br>
         <h1 style="text-align:center">Search</h1><br>
 
+
         <body>
-            <form method="POST" class="form-inline" action="results.php">
-                <div class="form-group">
+            <form method="POST" class="form-inline" action="results.php"  style="margin-left:46em;">
+                <!-- <div class="form-group">
                     <select name="type">
                         <option value="medicine">Medicine</option>
                         <option value="vaccine">Vaccine</option>
@@ -69,8 +70,19 @@ if(isset($_SESSION['loggedin'])==true)
                     <label for="name">Name</label>
                     <input type="text" class="form-control" name="rname">
 
+                </div> -->
+                <!-- <button type="submit" class="btn btn-default">Search</button> -->
+                <div class="form-group">
+                    <select style="margin-right:10px;" name="type" class="form-control" id="exampleFormControlSelect1">
+                    <option value="medicine">Medicine</option>
+                        <option value="vaccine">Vaccine</option>
+                        <option value="blood">Blood</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <div class="form-group">
+                    <input class="form-control mr-sm-2" name="rname" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Search</button>
+                </div>
 
             </form>
         </body>

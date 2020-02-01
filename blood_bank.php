@@ -127,11 +127,6 @@ if(isset($_SESSION['loggedin2'])==true)
                         <option value="AB-">AB-</option>
                     </select>
                 </div>
-                <!-- <div class="form-group">
-                    <label style="padding-right:10px;padding-left:10px;" for="name">Quantity</label>
-                    <input type="number" name="quantity">
-                </div>
-                <button style="padding-right:10px;padding-left:10px;" type="submit" class="btn btn-default" name="add">Add Supply</button> -->
                 <div class="form-group">
                     <input class="form-control mr-sm-2" name="quantity" type="search" placeholder="Quantity" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" name="add" type="submit">Add</button>
