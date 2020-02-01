@@ -84,10 +84,12 @@ if ($result -> num_rows >  0) {
  while ($row = $result->fetch_assoc()) 
  {
       $count=$count+1;
+      $quan=$row["quantity"];
+
    ?>
 
 
-                                        <tr>
+                                        <tr  <?php if($quan<=50){?>class="table-danger"<?php }else{?>class="table-success"<?php } ?>>
                                             <th><?php echo $count ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["price"]  ?></th>
@@ -142,10 +144,12 @@ if ($result -> num_rows >  0) {
  while ($row = $result->fetch_assoc()) 
  {
       $count=$count+1;
+      $quan=$row["quantity"];
+
    ?>
 
 
-                                        <tr>
+                                        <tr  <?php if($quan<=50){?>class="table-danger"<?php }else{?>class="table-success"<?php } ?>>
                                             <th><?php echo $count ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["price"]  ?></th>
@@ -199,10 +203,12 @@ if ($result -> num_rows >  0) {
  while ($row = $result->fetch_assoc()) 
  {
       $count=$count+1;
+      $quan=$row["quantity"];
+
    ?>
 
 
-                                        <tr>
+                                        <tr  <?php if($quan<=50){?>class="table-danger"<?php }else{?>class="table-success"<?php } ?>>
                                             <th><?php echo $count ?></th>
                                             <th><?php echo $row["rname"] ?></th>
                                             <th><?php echo $row["quantity"]  ?></th>

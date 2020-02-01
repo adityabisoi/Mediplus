@@ -168,7 +168,8 @@ if(isset($_SESSION['loggedin2'])==true)
 				  
                  while ($row = $result->fetch_assoc()) 
 				 {
-					  $count=$count+1;
+                      $count=$count+1;
+
                    ?>
 
 
