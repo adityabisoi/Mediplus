@@ -113,7 +113,7 @@ body {
         if($status){
             $sql="INSERT INTO bblogin(username, password, name) values ('$un','$ps','$na')";
             if ($com->query($sql)) {
-                header ('Location: bloodBankLogin.php');
+                header ('Location: index.php');
             }
             else{
                 echo "Error: ".$sql."<br>".$com->error;
@@ -149,9 +149,9 @@ body {
         </form>
     </div> -->
     <div class="wrapper">
-    <form class="form-signin">       
+    <form class="form-signin" method="post">       
       <h2 style="text-align:center;" class="form-signin-heading">Create Blood Bank Account</h2><br>
-      <input type="text" class="form-control" name="uname" placeholder="Username" required="" autofocus="" /><br>
+      <input type="text" class="form-control" name="uname" placeholder="Username" required="" autofocus /><br>
       <input type="password" class="form-control" name="pass" placeholder="Password" required=""/><br>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>   
