@@ -57,7 +57,7 @@ if(isset($_SESSION['loggedin'])==true)
             <div class="col-lg-6 mt-5" style="margin-left:26em;">
                 <div >
                     <div class="card-body" style="text-align:center;">
-                        <h4 style="text-align:center" class="header-title">Vaccine Supplies</h4>
+                    <u> <h4 style="text-align:center" class="header-title">Vaccine Supplies</h4></u>
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -117,7 +117,7 @@ if ($result -> num_rows >  0) {
                         </div>
                     </div>
                     <div class="card-body" style="text-align:center;">
-                        <h4 style="text-align:center" class="header-title">Medicine Supplies</h4>
+                       <u> <h4 style="text-align:center" class="header-title">Medicine Supplies</h4></u>
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered">
@@ -177,7 +177,7 @@ if ($result -> num_rows >  0) {
                         </div>
                     </div>
                     <div class="card-body" style="text-align:center;">
-                        <h4 style="text-align:center" class="header-title">Blood Bank Supplies</h4>
+                       <u> <h4 style="text-align:center" class="header-title">Blood Bank Supplies</h4></u>
                         <div class="single-table">
                             <div class="table-responsive">
                                 <table class="table table-bordered">

@@ -23,6 +23,58 @@ if(isset($_SESSION['loggedin'])==true)
             }
         })
     </script>
+    <style>@import "bourbon";
+
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+}
+</style>
 </head>
 
 <body>
@@ -94,24 +146,19 @@ if(isset($_SESSION['loggedin'])==true)
             <input type="text" name="uname" placeholder="Username" required autofocus>
             <input type="password" name="pass" placeholder="password" required>
             <input type="submit" name="submit" value="Create">
-        </form>
-    </div> -->
-    <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </form> -->
+    <!-- </div> -->
+    <div class="wrapper">
+    <form class="form-signin">       
+      <h2 style="text-align:center;" class="form-signin-heading">Create Pharmacy Account</h2><br>
+      <input type="text" class="form-control" name="uname" placeholder="Username" required="" autofocus="" /><br>
+      <input type="password" class="form-control" name="pass" placeholder="Password" required=""/><br>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>   
+    </form>
+
+
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

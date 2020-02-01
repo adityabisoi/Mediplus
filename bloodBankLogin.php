@@ -97,7 +97,7 @@
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">Pharmacy Login</h2>
+                        <h2 class="form-title">Blood Bank Login</h2>
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Name"/>
                         </div>
@@ -105,7 +105,7 @@
                             <input type="text" class="form-input" name="uname" id="name" placeholder="Username"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                         </div>
                         
                         <div class="form-group">

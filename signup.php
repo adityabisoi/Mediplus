@@ -174,7 +174,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <input type="text" class="form-input" name="pass" id="password" placeholder="Password"/>
+                            <input type="password" class="form-input" name="pass" id="password" placeholder="Password"/>
                             <!-- <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span> -->
                         </div>
                         <div class="form-group">
@@ -184,12 +184,9 @@
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
                         </div>
-                    </form>
-                    <p class="loginhere">
-                        Have already an account ? <a href="login.php" class="loginhere-link">Login here</a>
-                    </p><center>
+                    </form><center>
                     <p class="logihere">
-                        <a href="donate.php" class="loginhere-link">Donate Blood</a>
+                        Have already an account ? <a href="login.php" class="loginhere-link">Login here</a>
                     </p></center>
                 </div>
             </div>

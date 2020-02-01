@@ -122,7 +122,7 @@
                             <input type="text" class="form-input" name="uname" id="name" placeholder="Username"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                         </div>
                         <!-- <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
@@ -135,6 +135,9 @@
                     <p class="loginhere">
                         Don't have an account ? <a href="signup.php" class="loginhere-link">Signup here</a>
                     </p><center>
+                    <p class="logihere">
+                        <a href="donate.php" class="loginhere-link">Donate Blood</a>
+                    </p>
                     <p class="loginhre">
                         <a href="bloodBankLogin.php" class="loginhere-link">Blood Bank Login</a>
                     </p>

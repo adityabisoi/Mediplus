@@ -106,7 +106,7 @@
                             <input type="text" class="form-input" name="uname" id="name" placeholder="Username"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                         </div>
                         
                         <div class="form-group">
