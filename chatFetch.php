@@ -1,3 +1,7 @@
+<?php //starting session
+session_start();
+if(isset($_SESSION['loggedin'])==true)
+{ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +11,11 @@
     <title></title>
 </head>
 <body>
-<?php
+<?php 
+$name="";
+$name= $_SESSION['userDetails']['name'];
 $conn = new mysqli("localhost","root","","electrothon");
-               $sql = "SELECT * FROM stats ";
+               $sql = "SELECT * FROM stats WHERE forhosp='$name' ";
                $result = $conn->query($sql);
                if ($result -> num_rows >  0) {
 				  
@@ -21,4 +27,5 @@ $conn = new mysqli("localhost","root","","electrothon");
 
 ?>
 </body>
+<?php }else{ header ("Location: login.php"); } ?>
 </html>

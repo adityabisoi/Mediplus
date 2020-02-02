@@ -10,11 +10,16 @@ if(isset($_SESSION['loggedin3'])==true)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Send Stats</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="src/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="src/login/css/style.css">
 </head>
 
 <body>
     <?php 
-        $num=$pulseoxy=$pulserate=$bp=$details="";
+        $num=$pulseoxy=$pulserate=$bp=$details=$forhosp="";
         $num= $_SESSION['userDetails3']['ambno'];
         $status=true;
         if (!empty($_POST)) {
@@ -42,6 +47,12 @@ if(isset($_SESSION['loggedin3'])==true)
             else {
                 $details=$_POST['details'];
             }
+            if (empty($_POST['forhosp'])) {
+                $status=false;
+            }
+            else {
+                $forhosp=$_POST['forhosp'];
+            }
     
             $servername= "localhost";
             $username= "root";
@@ -58,7 +69,7 @@ if(isset($_SESSION['loggedin3'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, bp, details) values ('$num','$pulseoxy','$pulserate','$bp','$details')";
+                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, bp, details, forhosp) values ('$num','$pulseoxy','$pulserate','$bp','$details', '$forhosp')";
                 if ($com->query($sql)) {
                     header ("Location: chatSend.php");
                 }
@@ -71,13 +82,41 @@ if(isset($_SESSION['loggedin3'])==true)
     
         }
     ?>
-    <form method="post">
-        <input type="search" name="pulseoxy">
-        <input type="search" name="pulserate">
-        <input type="search" name="bp">
-        <textarea name="details" cols="30" rows="10"></textarea>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="main">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Send Statistics</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="forhosp" id="name" placeholder="Hospital You Are Headed To" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="pulseoxy" id="name" placeholder="Pulse Oxymeter Reading" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="pulserate" id="name" placeholder="Pulserate" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="bp" id="name" placeholder="Blood Pressure" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="details" id="name" placeholder="Details Of Condition" />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Login" />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="src/login/js/main.js"></script>
 </body>
 <?php }else{ header ("Location: ambulanceLogin.php"); } ?>
 
