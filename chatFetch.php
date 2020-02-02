@@ -28,7 +28,7 @@ if(isset($_SESSION['loggedin'])==true)
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
+            <span class="navbar-brand mb-0 h1">Hospital</span>
         </div>
         <!-- <div class="mx-auto order-0">
         <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
@@ -38,6 +38,9 @@ if(isset($_SESSION['loggedin'])==true)
     </div> -->
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
                 <?php if($_SESSION['loggedin']==true){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -85,8 +88,8 @@ if(isset($_SESSION['loggedin'])==true)
 
                                         <tr >
                                             <th scope="row"><?php echo $row["ambno"] ?></th>
-                                            <th <?php if($row["pulseoxy"]<=90){?>class="table-danger"<?php }else{?>class="bg-success"<?php } ?> scope="row"><?php echo $row["pulseoxy"]  ?></th>
-                                            <th <?php if($row["pulserate"]<=60 || $row["pulserate"]>=100){?>class="table-danger"<?php }else{?>class="bg-success"<?php } ?> scope="row"><?php echo $row["pulserate"]  ?></th>
+                                            <th <?php if($row["pulseoxy"]<=90){?>class="table-danger"<?php }else{?>class="table-success"<?php } ?> scope="row"><?php echo $row["pulseoxy"]  ?></th>
+                                            <th <?php if($row["pulserate"]<=60 || $row["pulserate"]>=100){?>class="table-danger"<?php }else{?>class="table-success"<?php } ?> scope="row"><?php echo $row["pulserate"]  ?></th>
                                             <th <?php if($row["systolic"]<=120){?>class="bg-success"<?php }else if($row["systolic"]>=120 && $row["systolic"]<=140){?>class="bg-warning"<?php }else{?>class="bg-danger"<?php } ?> scope="row"><?php echo $row["systolic"]  ?></th>
                                             <th <?php if($row["diastolic"]<=80){?>class="bg-success"<?php }else if($row["diastolic"]>=80 && $row["diastolic"]<=90){?>class="bg-warning"<?php }else{?>class="bg-danger"<?php } ?> scope="row"><?php echo $row["diastolic"]  ?></th>
                                             <th class="table-warning" scope="row"><?php echo $row["details"]  ?></th>

@@ -75,7 +75,7 @@ if(isset($_SESSION['loggedin3'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, syst, diast, details, forhosp) values ('$num','$pulseoxy','$pulserate','$syst', '$diast','$details', '$forhosp')";
+                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, systolic, diastolic, details, forhosp) values ('$num','$pulseoxy','$pulserate','$syst', '$diast','$details', '$forhosp')";
                 if ($com->query($sql)) {
                     header ("Location: chatSend.php");
                 }
