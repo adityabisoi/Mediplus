@@ -19,7 +19,7 @@ if(isset($_SESSION['loggedin3'])==true)
 
 <body>
     <?php 
-        $num=$pulseoxy=$pulserate=$bp=$details=$forhosp="";
+        $num=$pulseoxy=$pulserate=$syst=$diast=$details=$forhosp="";
         $num= $_SESSION['userDetails3']['ambno'];
         $status=true;
         if (!empty($_POST)) {
@@ -35,11 +35,17 @@ if(isset($_SESSION['loggedin3'])==true)
             else {
                 $pulserate=$_POST['pulserate'];
             }
-            if (empty($_POST['bp'])) {
+            if (empty($_POST['syst'])) {
                 $status=false;
             }
             else {
-                $bp=$_POST['bp'];
+                $syst=$_POST['syst'];
+            }
+            if (empty($_POST['diast'])) {
+                $status=false;
+            }
+            else {
+                $diast=$_POST['diast'];
             }
             if (empty($_POST['details'])) {
                 $status=false;
@@ -69,7 +75,7 @@ if(isset($_SESSION['loggedin3'])==true)
             else{
     
             if ($status) {
-                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, bp, details, forhosp) values ('$num','$pulseoxy','$pulserate','$bp','$details', '$forhosp')";
+                $sql="INSERT INTO stats (ambno, pulseoxy, pulserate, syst, diast, details, forhosp) values ('$num','$pulseoxy','$pulserate','$syst', '$diast','$details', '$forhosp')";
                 if ($com->query($sql)) {
                     header ("Location: chatSend.php");
                 }
@@ -96,13 +102,16 @@ if(isset($_SESSION['loggedin3'])==true)
                             <input type="text" class="form-input" name="pulseoxy" id="name" placeholder="Pulse Oxymeter Reading" />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="pulserate" id="name" placeholder="Pulserate" />
+                            <input type="text" class="form-input" name="pulserate" id="name" placeholder="Pulserate (in %)" />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="bp" id="name" placeholder="Blood Pressure" />
+                            <input type="text" class="form-input" name="syst" id="name" placeholder="Systolic Blood Pressure (in bpm)" />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="details" id="name" placeholder="Details Of Condition" />
+                            <input type="text" class="form-input" name="diast" id="name" placeholder="Diastolic Blood Pressure (in mm HG)" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="details" id="name" placeholder="Details Of Condition (in mm HG)" />
                         </div>
 
                         <div class="form-group">
